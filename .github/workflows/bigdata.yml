@@ -1,0 +1,65 @@
+name: Big Data - Ingesta desde API (CoinGecko)
+
+# Se ejecuta: al hacer push a main, manualmente desde la pestaña Actions,
+# y automáticamente todos los días a las 09:00 UTC — lo último es lo que
+# convierte a coins_market en una serie de tiempo útil para las próximas
+# etapas del proyecto (cada corrida programada agrega un nuevo snapshot).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: "0 9 * * *"
+
+permissions:
+  contents: write   # necesario para que el job pueda commitear las evidencias
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Instalar dependencias (desde setup.py)
+        run: pip install .
+
+      - name: Ejecutar la ingesta
+        run: python src/ingestion.py
+
+      - name: Verificar que los artefactos existen
+        run: |
+          test -f src/db/ingestion.db
+          test -f src/xlsx/ingestion.xlsx
+          test -f src/static/auditoria/ingestion.txt
+          echo "Los 3 artefactos se generaron correctamente."
+          echo "--- ingestion.txt ---"
+          cat src/static/auditoria/ingestion.txt
+
+      # Deja evidencia por dos vías, tal como sugiere el enunciado:
+
+      # (a) como artefacto descargable del propio workflow run
+      - name: Subir artefactos del workflow
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidencia-ingesta-${{ github.run_id }}
+          path: |
+            src/db/ingestion.db
+            src/xlsx/ingestion.xlsx
+            src/static/auditoria/ingestion.txt
+
+      # (b) commiteados de vuelta al repo, para que sean visibles sin
+      # tener que entrar a la pestaña Actions a descargar nada.
+      # El mensaje incluye [skip ci] para que este mismo commit no
+      # dispare de nuevo el workflow con el trigger de "push".
+      - name: Commitear evidencias actualizadas al repositorio
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Actualiza evidencias de ingesta (run ${{ github.run_id }}) [skip ci]"
+          file_pattern: "src/db/ingestion.db src/xlsx/ingestion.xlsx src/static/auditoria/ingestion.txt"
