@@ -1,9 +1,10 @@
-name: Big Data - Ingesta desde API (CoinGecko)
+name: Big Data - Ingesta y Limpieza (CoinGecko)
 
 # Se ejecuta: al hacer push a main, manualmente desde la pestaña Actions,
-# y automáticamente todos los días a las 09:00 UTC — lo último es lo que
-# convierte a coins_market en una serie de tiempo útil para las próximas
-# etapas del proyecto (cada corrida programada agrega un nuevo snapshot).
+# y automaticamente todos los dias a las 09:00 UTC. La corrida programada
+# es lo que convierte a coins_market en una serie de tiempo: cada dia se
+# agrega un nuevo snapshot, y la limpieza (EA2) corre sobre TODO el
+# historial acumulado hasta ese momento.
 on:
   push:
     branches: [main]
@@ -15,7 +16,7 @@ permissions:
   contents: write   # necesario para que el job pueda commitear las evidencias
 
 jobs:
-  ingest:
+  ingest_and_clean:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,36 +31,51 @@ jobs:
       - name: Instalar dependencias (desde setup.py)
         run: pip install .
 
-      - name: Ejecutar la ingesta
+      # ---------- EA1: Ingesta ----------
+      - name: Ejecutar la ingesta (EA1)
         run: python src/ingestion.py
 
-      - name: Verificar que los artefactos existen
+      - name: Verificar artefactos de ingesta (EA1)
         run: |
           test -f src/db/ingestion.db
           test -f src/xlsx/ingestion.xlsx
           test -f src/static/auditoria/ingestion.txt
-          echo "Los 3 artefactos se generaron correctamente."
-          echo "--- ingestion.txt ---"
-          cat src/static/auditoria/ingestion.txt
+          echo "Los 3 artefactos de ingesta se generaron correctamente."
 
-      # Deja evidencia por dos vías, tal como sugiere el enunciado:
+      # ---------- EA2: Preprocesamiento y limpieza ----------
+      # Nota: cleaning.py NO vuelve a llamar al API; lee lo que ya quedo
+      # guardado en ingestion.db (que hace de "almacenamiento en la nube
+      # simulado"), tal como pide el enunciado de EA2.
+      - name: Ejecutar la limpieza de datos (EA2)
+        run: python src/cleaning.py
+
+      - name: Verificar artefactos de limpieza (EA2)
+        run: |
+          test -f src/xlsx/cleaned_data.xlsx
+          test -f src/static/auditoria/cleaning_report.txt
+          echo "Los artefactos de limpieza se generaron correctamente."
+          echo "--- cleaning_report.txt ---"
+          cat src/static/auditoria/cleaning_report.txt
+
+      # Deja evidencia por dos vias:
 
       # (a) como artefacto descargable del propio workflow run
       - name: Subir artefactos del workflow
         uses: actions/upload-artifact@v4
         with:
-          name: evidencia-ingesta-${{ github.run_id }}
+          name: evidencia-bigdata-${{ github.run_id }}
           path: |
             src/db/ingestion.db
             src/xlsx/ingestion.xlsx
+            src/xlsx/cleaned_data.xlsx
             src/static/auditoria/ingestion.txt
+            src/static/auditoria/cleaning_report.txt
 
-      # (b) commiteados de vuelta al repo, para que sean visibles sin
-      # tener que entrar a la pestaña Actions a descargar nada.
-      # El mensaje incluye [skip ci] para que este mismo commit no
-      # dispare de nuevo el workflow con el trigger de "push".
+      # (b) commiteados de vuelta al repo, para que sean visibles sin tener
+      # que entrar a la pestana Actions a descargar nada. El mensaje incluye
+      # [skip ci] para que este commit no dispare de nuevo el workflow.
       - name: Commitear evidencias actualizadas al repositorio
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Actualiza evidencias de ingesta (run ${{ github.run_id }}) [skip ci]"
-          file_pattern: "src/db/ingestion.db src/xlsx/ingestion.xlsx src/static/auditoria/ingestion.txt"
+          commit_message: "Actualiza evidencias de ingesta y limpieza (run ${{ github.run_id }}) [skip ci]"
+          file_pattern: "src/db/ingestion.db src/xlsx/ingestion.xlsx src/xlsx/cleaned_data.xlsx src/static/auditoria/ingestion.txt src/static/auditoria/cleaning_report.txt"
