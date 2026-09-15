@@ -28,13 +28,16 @@ jonatan_avila/
 ├── README.md
 ├── .github/workflows/bigdata.yml            # automatización (GitHub Actions)
 └── src/
-    ├── ingestion.py                         # script principal de ingesta
+    ├── ingestion.py                         # script principal de ingesta (EA1)
+    ├── cleaning.py                          # script de limpieza y preprocesamiento (EA2)
     ├── db/
-    │   └── ingestion.db                     # base de datos SQLite (generada)
+    │   └── ingestion.db                     # base de datos SQLite (histórico de todas las corridas)
     ├── xlsx/
-    │   └── ingestion.xlsx                   # muestra de datos (generada)
+    │   ├── ingestion.xlsx                   # muestra de datos crudos (EA1, generada)
+    │   └── cleaned_data.xlsx                # muestra de datos limpios (EA2, generada)
     └── static/auditoria/
-        └── ingestion.txt                    # reporte de auditoría (generado)
+        ├── ingestion.txt                    # auditoría de ingesta (EA1, generada)
+        └── cleaning_report.txt              # auditoría de limpieza (EA2, generada)
 ```
 
 ## Diseño de la base de datos
@@ -155,3 +158,5 @@ pasos nuevos: después de la ingesta, corre `python src/cleaning.py`, verifica
 que sus artefactos existan, y los sube tanto como artefacto descargable del
 workflow como comiteados de vuelta al repositorio — igual que se hacía con la
 ingesta.
+
+
