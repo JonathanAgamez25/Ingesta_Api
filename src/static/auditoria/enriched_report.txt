@@ -1,6 +1,6 @@
 ============================================================
 EA3 — Enriquecimiento de datos (CoinGecko)
-Ejecutado: 2026-09-22T11:19:04.128066+00:00
+Ejecutado: 2026-09-22T21:59:57.468423+00:00
 ============================================================
 Dataset base cargado: 100 registros, 19 columnas.
 
@@ -31,4 +31,4 @@ Observaciones por fuente:
   - JSON, XLSX, CSV, XML, HTML y TXT cubren la totalidad de las 50 criptomonedas más conocidas del mercado; el porcentaje de coincidencia real depende de cuáles de esas monedas aparecen en el snapshot vigente de samples.wanderbricks / CoinGecko.
   - Las filas del dataset base cuyo 'id' no aparece en ninguna fuente adicional quedan con valores nulos (NaN) en las columnas nuevas, sin perder el registro original (left join, no inner join) — se prefirió no descartar datos por falta de enriquecimiento.
 
-Dataset enriquecido guardado en: C:\Users\Usuario\Ingesta_Api\src\xlsx\enriched_data.xlsx
+Dataset enriquecido guardado en: /home/runner/work/Ingesta_Api/Ingesta_Api/src/xlsx/enriched_data.xlsx
