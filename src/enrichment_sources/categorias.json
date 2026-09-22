@@ -1,0 +1,202 @@
+{
+  "bitcoin": {
+    "categoria": "Reserva de valor",
+    "subcategoria": "Pagos"
+  },
+  "ethereum": {
+    "categoria": "Plataforma de contratos inteligentes",
+    "subcategoria": "Layer 1"
+  },
+  "tether": {
+    "categoria": "Stablecoin",
+    "subcategoria": "Respaldada por reservas fiat"
+  },
+  "binancecoin": {
+    "categoria": "Token de exchange",
+    "subcategoria": "Layer 1 (BNB Chain)"
+  },
+  "solana": {
+    "categoria": "Plataforma de contratos inteligentes",
+    "subcategoria": "Layer 1"
+  },
+  "usd-coin": {
+    "categoria": "Stablecoin",
+    "subcategoria": "Respaldada por reservas fiat"
+  },
+  "ripple": {
+    "categoria": "Pagos internacionales",
+    "subcategoria": "Remesas"
+  },
+  "dogecoin": {
+    "categoria": "Meme coin",
+    "subcategoria": "Pagos comunitarios"
+  },
+  "cardano": {
+    "categoria": "Plataforma de contratos inteligentes",
+    "subcategoria": "Layer 1"
+  },
+  "tron": {
+    "categoria": "Plataforma de contratos inteligentes",
+    "subcategoria": "Layer 1"
+  },
+  "avalanche-2": {
+    "categoria": "Plataforma de contratos inteligentes",
+    "subcategoria": "Layer 1"
+  },
+  "shiba-inu": {
+    "categoria": "Meme coin",
+    "subcategoria": "Ecosistema DeFi"
+  },
+  "chainlink": {
+    "categoria": "Oráculo",
+    "subcategoria": "Infraestructura Web3"
+  },
+  "bitcoin-cash": {
+    "categoria": "Pagos",
+    "subcategoria": "Fork de Bitcoin"
+  },
+  "polkadot": {
+    "categoria": "Interoperabilidad",
+    "subcategoria": "Layer 0"
+  },
+  "near": {
+    "categoria": "Plataforma de contratos inteligentes",
+    "subcategoria": "Layer 1"
+  },
+  "litecoin": {
+    "categoria": "Pagos",
+    "subcategoria": "Store of value ligero"
+  },
+  "internet-computer": {
+    "categoria": "Infraestructura descentralizada",
+    "subcategoria": "Hosting"
+  },
+  "uniswap": {
+    "categoria": "DeFi",
+    "subcategoria": "Exchange descentralizado"
+  },
+  "dai": {
+    "categoria": "Stablecoin",
+    "subcategoria": "Colateralizada por cripto"
+  },
+  "wrapped-bitcoin": {
+    "categoria": "Token wrapeado",
+    "subcategoria": "Interoperabilidad DeFi"
+  },
+  "stellar": {
+    "categoria": "Pagos internacionales",
+    "subcategoria": "Remesas"
+  },
+  "monero": {
+    "categoria": "Privacidad",
+    "subcategoria": "Pagos privados"
+  },
+  "ethereum-classic": {
+    "categoria": "Plataforma de contratos inteligentes",
+    "subcategoria": "Layer 1"
+  },
+  "cosmos": {
+    "categoria": "Interoperabilidad",
+    "subcategoria": "Layer 0"
+  },
+  "filecoin": {
+    "categoria": "Almacenamiento descentralizado",
+    "subcategoria": "Infraestructura Web3"
+  },
+  "aptos": {
+    "categoria": "Plataforma de contratos inteligentes",
+    "subcategoria": "Layer 1"
+  },
+  "hedera-hashgraph": {
+    "categoria": "Infraestructura empresarial",
+    "subcategoria": "DLT"
+  },
+  "okb": {
+    "categoria": "Token de exchange",
+    "subcategoria": "Utilidad"
+  },
+  "leo-token": {
+    "categoria": "Token de exchange",
+    "subcategoria": "Utilidad"
+  },
+  "crypto-com-chain": {
+    "categoria": "Token de exchange",
+    "subcategoria": "Layer 1 (Cronos)"
+  },
+  "vechain": {
+    "categoria": "Cadena de suministro",
+    "subcategoria": "Trazabilidad"
+  },
+  "algorand": {
+    "categoria": "Plataforma de contratos inteligentes",
+    "subcategoria": "Layer 1"
+  },
+  "the-graph": {
+    "categoria": "Infraestructura Web3",
+    "subcategoria": "Indexación de datos"
+  },
+  "aave": {
+    "categoria": "DeFi",
+    "subcategoria": "Préstamos"
+  },
+  "maker": {
+    "categoria": "DeFi",
+    "subcategoria": "Gobernanza de stablecoin"
+  },
+  "quant-network": {
+    "categoria": "Interoperabilidad",
+    "subcategoria": "Infraestructura empresarial"
+  },
+  "eos": {
+    "categoria": "Plataforma de contratos inteligentes",
+    "subcategoria": "Layer 1"
+  },
+  "tezos": {
+    "categoria": "Plataforma de contratos inteligentes",
+    "subcategoria": "Layer 1"
+  },
+  "theta-token": {
+    "categoria": "Streaming descentralizado",
+    "subcategoria": "Infraestructura Web3"
+  },
+  "flow": {
+    "categoria": "Gaming/NFT",
+    "subcategoria": "Layer 1"
+  },
+  "axie-infinity": {
+    "categoria": "Gaming",
+    "subcategoria": "Play-to-earn"
+  },
+  "fantom": {
+    "categoria": "Plataforma de contratos inteligentes",
+    "subcategoria": "Layer 1"
+  },
+  "elrond-erd-2": {
+    "categoria": "Plataforma de contratos inteligentes",
+    "subcategoria": "Layer 1"
+  },
+  "neo": {
+    "categoria": "Plataforma de contratos inteligentes",
+    "subcategoria": "Layer 1"
+  },
+  "kucoin-shares": {
+    "categoria": "Token de exchange",
+    "subcategoria": "Utilidad"
+  },
+  "pancakeswap-token": {
+    "categoria": "DeFi",
+    "subcategoria": "Exchange descentralizado"
+  },
+  "decentraland": {
+    "categoria": "Metaverso",
+    "subcategoria": "NFT/Bienes raíces virtuales"
+  },
+  "the-sandbox": {
+    "categoria": "Metaverso",
+    "subcategoria": "NFT/Gaming"
+  },
+  "zcash": {
+    "categoria": "Privacidad",
+    "subcategoria": "Pagos privados"
+  }
+}

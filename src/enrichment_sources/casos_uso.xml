@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<criptomonedas>
+  <moneda id="bitcoin">
+    <caso_de_uso>Reserva de valor y pagos</caso_de_uso>
+  </moneda>
+  <moneda id="ethereum">
+    <caso_de_uso>Contratos inteligentes y dApps</caso_de_uso>
+  </moneda>
+  <moneda id="tether">
+    <caso_de_uso>Estabilidad de valor para trading</caso_de_uso>
+  </moneda>
+  <moneda id="binancecoin">
+    <caso_de_uso>Pago de comisiones en BNB Chain</caso_de_uso>
+  </moneda>
+  <moneda id="solana">
+    <caso_de_uso>dApps de alto rendimiento</caso_de_uso>
+  </moneda>
+  <moneda id="usd-coin">
+    <caso_de_uso>Pagos y trading estable</caso_de_uso>
+  </moneda>
+  <moneda id="ripple">
+    <caso_de_uso>Pagos interbancarios internacionales</caso_de_uso>
+  </moneda>
+  <moneda id="dogecoin">
+    <caso_de_uso>Propinas y pagos comunitarios</caso_de_uso>
+  </moneda>
+  <moneda id="cardano">
+    <caso_de_uso>Contratos inteligentes con enfoque académico</caso_de_uso>
+  </moneda>
+  <moneda id="tron">
+    <caso_de_uso>Contenido digital y entretenimiento</caso_de_uso>
+  </moneda>
+  <moneda id="avalanche-2">
+    <caso_de_uso>Subredes personalizadas para empresas</caso_de_uso>
+  </moneda>
+  <moneda id="shiba-inu">
+    <caso_de_uso>Ecosistema meme y DeFi comunitario</caso_de_uso>
+  </moneda>
+  <moneda id="chainlink">
+    <caso_de_uso>Conexión de datos externos a contratos inteligentes</caso_de_uso>
+  </moneda>
+  <moneda id="bitcoin-cash">
+    <caso_de_uso>Pagos cotidianos de bajo costo</caso_de_uso>
+  </moneda>
+  <moneda id="polkadot">
+    <caso_de_uso>Interoperabilidad entre blockchains</caso_de_uso>
+  </moneda>
+  <moneda id="near">
+    <caso_de_uso>dApps escalables mediante sharding</caso_de_uso>
+  </moneda>
+  <moneda id="litecoin">
+    <caso_de_uso>Pagos rápidos de bajo costo</caso_de_uso>
+  </moneda>
+  <moneda id="internet-computer">
+    <caso_de_uso>Hosting descentralizado de aplicaciones</caso_de_uso>
+  </moneda>
+  <moneda id="uniswap">
+    <caso_de_uso>Intercambio descentralizado de tokens</caso_de_uso>
+  </moneda>
+  <moneda id="dai">
+    <caso_de_uso>Estabilidad de valor descentralizada</caso_de_uso>
+  </moneda>
+  <moneda id="wrapped-bitcoin">
+    <caso_de_uso>Uso de BTC dentro de DeFi en Ethereum</caso_de_uso>
+  </moneda>
+  <moneda id="stellar">
+    <caso_de_uso>Remesas y pagos transfronterizos</caso_de_uso>
+  </moneda>
+  <moneda id="monero">
+    <caso_de_uso>Transacciones privadas</caso_de_uso>
+  </moneda>
+  <moneda id="ethereum-classic">
+    <caso_de_uso>Contratos inteligentes (cadena original)</caso_de_uso>
+  </moneda>
+  <moneda id="cosmos">
+    <caso_de_uso>Interoperabilidad entre blockchains soberanas</caso_de_uso>
+  </moneda>
+  <moneda id="filecoin">
+    <caso_de_uso>Almacenamiento descentralizado de archivos</caso_de_uso>
+  </moneda>
+  <moneda id="aptos">
+    <caso_de_uso>Contratos inteligentes de alto rendimiento</caso_de_uso>
+  </moneda>
+  <moneda id="hedera-hashgraph">
+    <caso_de_uso>Aplicaciones empresariales y tokenización</caso_de_uso>
+  </moneda>
+  <moneda id="okb">
+    <caso_de_uso>Beneficios dentro del exchange OKX</caso_de_uso>
+  </moneda>
+  <moneda id="leo-token">
+    <caso_de_uso>Beneficios dentro del ecosistema Bitfinex</caso_de_uso>
+  </moneda>
+  <moneda id="crypto-com-chain">
+    <caso_de_uso>Pagos y DeFi en el ecosistema Crypto.com</caso_de_uso>
+  </moneda>
+  <moneda id="vechain">
+    <caso_de_uso>Trazabilidad de productos y logística</caso_de_uso>
+  </moneda>
+  <moneda id="algorand">
+    <caso_de_uso>Contratos inteligentes de alta eficiencia</caso_de_uso>
+  </moneda>
+  <moneda id="the-graph">
+    <caso_de_uso>Indexación de datos para dApps</caso_de_uso>
+  </moneda>
+  <moneda id="aave">
+    <caso_de_uso>Préstamos y créditos descentralizados</caso_de_uso>
+  </moneda>
+  <moneda id="maker">
+    <caso_de_uso>Emisión y gobernanza de la stablecoin DAI</caso_de_uso>
+  </moneda>
+  <moneda id="quant-network">
+    <caso_de_uso>Interoperabilidad entre redes empresariales</caso_de_uso>
+  </moneda>
+  <moneda id="eos">
+    <caso_de_uso>Aplicaciones descentralizadas escalables</caso_de_uso>
+  </moneda>
+  <moneda id="tezos">
+    <caso_de_uso>Contratos inteligentes auto-actualizables</caso_de_uso>
+  </moneda>
+  <moneda id="theta-token">
+    <caso_de_uso>Streaming de video descentralizado</caso_de_uso>
+  </moneda>
+  <moneda id="flow">
+    <caso_de_uso>Juegos y coleccionables NFT</caso_de_uso>
+  </moneda>
+  <moneda id="axie-infinity">
+    <caso_de_uso>Videojuego play-to-earn</caso_de_uso>
+  </moneda>
+  <moneda id="fantom">
+    <caso_de_uso>Contratos inteligentes de alta velocidad</caso_de_uso>
+  </moneda>
+  <moneda id="elrond-erd-2">
+    <caso_de_uso>Contratos inteligentes escalables (MultiversX)</caso_de_uso>
+  </moneda>
+  <moneda id="neo">
+    <caso_de_uso>Digitalización de activos y contratos inteligentes</caso_de_uso>
+  </moneda>
+  <moneda id="kucoin-shares">
+    <caso_de_uso>Beneficios en el exchange KuCoin</caso_de_uso>
+  </moneda>
+  <moneda id="pancakeswap-token">
+    <caso_de_uso>Intercambio descentralizado en BNB Chain</caso_de_uso>
+  </moneda>
+  <moneda id="decentraland">
+    <caso_de_uso>Metaverso y bienes raíces virtuales</caso_de_uso>
+  </moneda>
+  <moneda id="the-sandbox">
+    <caso_de_uso>Metaverso y creación de contenido NFT</caso_de_uso>
+  </moneda>
+  <moneda id="zcash">
+    <caso_de_uso>Transacciones con privacidad opcional</caso_de_uso>
+  </moneda>
+</criptomonedas>

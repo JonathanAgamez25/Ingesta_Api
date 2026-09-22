@@ -1,0 +1,50 @@
+bitcoin: Suministro máximo fijo de 21 millones de monedas.
+ethereum: Migró de Proof of Work a Proof of Stake en septiembre de 2022 (The Merge).
+tether: Es la stablecoin más usada del mercado, respaldada 1:1 por reservas en dólares.
+binancecoin: Se usa para pagar comisiones reducidas dentro del exchange Binance.
+solana: Conocida por su alta velocidad de transacción y bajas comisiones.
+usd-coin: Stablecoin emitida por Circle, respaldada por reservas auditadas en dólares.
+ripple: Diseñada para pagos transfronterizos rápidos entre instituciones financieras.
+dogecoin: Nació como moneda meme en 2013, sin límite máximo de suministro.
+cardano: Desarrollada con un enfoque académico y revisión por pares en su investigación.
+tron: Enfocada en contenido digital y entretenimiento descentralizado.
+avalanche-2: Permite crear subredes (subnets) personalizadas para casos de uso específicos.
+shiba-inu: Token meme inspirado en Dogecoin, con ecosistema DeFi propio (ShibaSwap).
+chainlink: Provee datos del mundo real (oráculos) a contratos inteligentes.
+bitcoin-cash: Surgió de una bifurcación de Bitcoin en 2017 para aumentar el tamaño de bloque.
+polkadot: Permite que blockchains distintas (parachains) se comuniquen entre sí.
+near: Usa sharding para escalar el procesamiento de transacciones.
+litecoin: Fue diseñada como complemento más rápido y liviano de Bitcoin.
+internet-computer: Busca reemplazar servidores tradicionales con "canisters" en cadena.
+uniswap: Uno de los mayores exchanges descentralizados (DEX) del ecosistema Ethereum.
+dai: Stablecoin descentralizada, generada mediante colateral cripto sobrecolateralizado.
+wrapped-bitcoin: Permite usar Bitcoin dentro del ecosistema de contratos inteligentes de Ethereum.
+stellar: Enfocada en remesas y pagos de bajo costo en economías emergentes.
+monero: Prioriza la privacidad total de remitente, destinatario y monto de cada transacción.
+ethereum-classic: Mantiene la cadena original de Ethereum tras la bifurcación de 2016.
+cosmos: Se autodefine como el "Internet de las blockchains", enfocada en interoperabilidad.
+filecoin: Recompensa a quienes ofrecen espacio de almacenamiento descentralizado.
+aptos: Desarrollada por exingenieros del proyecto Diem (Meta/Facebook).
+hedera-hashgraph: Gobernada por un consejo de grandes empresas globales.
+okb: Token nativo del exchange OKX, usado para descuentos y beneficios.
+leo-token: Token de utilidad emitido por iFinex, empresa matriz de Bitfinex.
+crypto-com-chain: Token nativo del ecosistema Crypto.com y su red Cronos.
+vechain: Enfocada en trazabilidad de cadenas de suministro para empresas.
+algorand: Fundada por Silvio Micali, ganador del Premio Turing.
+the-graph: Indexa datos de blockchains para que las dApps los consulten eficientemente.
+aave: Pionero en préstamos y créditos flash (flash loans) dentro de DeFi.
+maker: Gobierna el protocolo que emite la stablecoin DAI.
+quant-network: Su tecnología Overledger busca conectar múltiples blockchains y redes existentes.
+eos: Prometía escalabilidad masiva mediante delegación de validadores (DPoS).
+tezos: Permite actualizar su propio protocolo mediante votación en cadena, sin bifurcaciones forzadas.
+theta-token: Enfocada en streaming de video descentralizado compartiendo ancho de banda entre usuarios.
+flow: Blockchain diseñada para juegos y NFTs, usada por NBA Top Shot.
+axie-infinity: Popularizó el modelo play-to-earn en videojuegos basados en NFTs.
+fantom: Busca alta velocidad de finalización de transacciones mediante su consenso Lachesis.
+elrond-erd-2: Rebautizado como MultiversX, enfocado en escalabilidad mediante sharding adaptativo.
+neo: Conocida como pionera del ecosistema blockchain en Asia.
+kucoin-shares: Otorga descuentos en comisiones dentro del exchange KuCoin.
+pancakeswap-token: Principal exchange descentralizado (DEX) del ecosistema BNB Chain.
+decentraland: Plataforma de mundo virtual donde los usuarios compran terrenos virtuales con MANA.
+the-sandbox: Plataforma de metaverso y creación de contenido basada en NFTs y voxels.
+zcash: Ofrece transacciones opcionalmente privadas mediante pruebas de conocimiento cero (zk-SNARKs).

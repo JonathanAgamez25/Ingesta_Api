@@ -1,0 +1,34 @@
+============================================================
+EA3 — Enriquecimiento de datos (CoinGecko)
+Ejecutado: 2026-09-22T11:19:04.128066+00:00
+============================================================
+Dataset base cargado: 100 registros, 19 columnas.
+
+Leyendo fuentes adicionales:
+[JSON] categorias.json leído: 50 registros (categoria, subcategoria).
+[XLSX] consenso.xlsx leído: 50 registros (mecanismo_consenso, anio_lanzamiento).
+[CSV] sitios_web.csv leído: 50 registros (sitio_web).
+[XML] casos_uso.xml leído: 50 registros (caso_de_uso).
+[HTML] tipo_red.html leído: 50 registros (tipo_red).
+[TXT] notas.txt leído: 50 registros (nota).
+
+Cruzando cada fuente contra el dataset base (join por 'id'):
+  → Cruce con categorias.json (JSON): 37/100 registros coincidentes (37.0%). Columnas agregadas: ['categoria', 'subcategoria']
+  → Cruce con consenso.xlsx (XLSX): 37/100 registros coincidentes (37.0%). Columnas agregadas: ['mecanismo_consenso', 'anio_lanzamiento']
+  → Cruce con sitios_web.csv (CSV): 37/100 registros coincidentes (37.0%). Columnas agregadas: ['sitio_web']
+  → Cruce con casos_uso.xml (XML): 37/100 registros coincidentes (37.0%). Columnas agregadas: ['caso_de_uso']
+  → Cruce con tipo_red.html (HTML): 37/100 registros coincidentes (37.0%). Columnas agregadas: ['tipo_red']
+  → Cruce con notas.txt (TXT): 37/100 registros coincidentes (37.0%). Columnas agregadas: ['nota']
+
+============================================================
+RESUMEN DEL ENRIQUECIMIENTO
+============================================================
+Registros en el dataset base:         100
+Registros en el dataset enriquecido:   100
+Columnas nuevas incorporadas:           categoria, subcategoria, mecanismo_consenso, anio_lanzamiento, sitio_web, caso_de_uso, tipo_red, nota
+
+Observaciones por fuente:
+  - JSON, XLSX, CSV, XML, HTML y TXT cubren la totalidad de las 50 criptomonedas más conocidas del mercado; el porcentaje de coincidencia real depende de cuáles de esas monedas aparecen en el snapshot vigente de samples.wanderbricks / CoinGecko.
+  - Las filas del dataset base cuyo 'id' no aparece en ninguna fuente adicional quedan con valores nulos (NaN) en las columnas nuevas, sin perder el registro original (left join, no inner join) — se prefirió no descartar datos por falta de enriquecimiento.
+
+Dataset enriquecido guardado en: C:\Users\Usuario\Ingesta_Api\src\xlsx\enriched_data.xlsx

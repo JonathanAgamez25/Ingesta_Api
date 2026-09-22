@@ -48,6 +48,22 @@ jobs:
       # simulado"), tal como pide el enunciado de EA2.
       - name: Ejecutar la limpieza de datos (EA2)
         run: python src/cleaning.py
+       
+
+      - name: Ejecutar enriquecimiento de datos (EA3)
+        run: python src/enrichement.py
+
+      - name: Verificar que los artefactos de enriquecimiento existen
+        run: |
+          test -f src/xlsx/enriched_data.xlsx || (echo "Falta enriched_data.xlsx" && exit 1)
+          test -f src/static/auditoria/enriched_report.txt || (echo "Falta enriched_report.txt" && exit 1)
+          echo "Artefactos de enriquecimiento verificados."
+
+      - name: Mostrar el reporte de auditoría del enriquecimiento en el log
+        run: cat src/static/auditoria/enriched_report.txt
+
+      - name: Verificar artefactos de limpieza (EA2)
+
 
       - name: Verificar artefactos de limpieza (EA2)
         run: |
