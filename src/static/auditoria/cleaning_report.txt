@@ -1,11 +1,11 @@
 ======================================================================
 REPORTE DE AUDITORÍA — LIMPIEZA Y PREPROCESAMIENTO DE DATOS
-Generado: 2026-09-21T15:50:09.191082+00:00
+Generado: 2026-09-22T13:59:29.299385+00:00
 ======================================================================
 
 --- 1) ESTADO ANTES DE LA LIMPIEZA ---
-Filas totales:               2600
-Corridas (run_id) distintas: 26
+Filas totales:               2700
+Corridas (run_id) distintas: 27
 Duplicados exactos:          0
 Duplicados por (run_id, coin_id): 0
 Nulos por columna (antes):
@@ -25,13 +25,13 @@ variación de precio a 24h; 'sin dato' se interpreta como
 --- 3) TRANSFORMACIONES ADICIONALES ---
   - is_price_change_outlier (bandera IQR, no elimina filas)
   - market_cap_normalized (escalado min-max por run_id)
-Outliers detectados en variación 24h (IQR, rango normal (-4.39, 5.99)): 391 filas marcadas (no eliminadas)
+Outliers detectados en variación 24h (IQR, rango normal (-4.38, 5.95)): 409 filas marcadas (no eliminadas)
 
 --- 4) ESTADO DESPUÉS DE LA LIMPIEZA ---
-Filas totales:  2600
+Filas totales:  2700
 Columnas totales: 19 (se agregaron 2: is_price_change_outlier, market_cap_normalized)
 Nulos por columna (después): ninguno
 
 --- 5) COMPARATIVA RESUMIDA ---
-Filas: 2600 -> 2600 (sin cambio)
+Filas: 2700 -> 2700 (sin cambio)
 Integridad de datos: CONFIRMADA
