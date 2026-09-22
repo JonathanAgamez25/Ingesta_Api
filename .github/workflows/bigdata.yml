@@ -1,10 +1,7 @@
 name: Big Data - Ingesta y Limpieza (CoinGecko)
 
-# Se ejecuta: al hacer push a main, manualmente desde la pestaña Actions,
-# y automaticamente todos los dias a las 09:00 UTC. La corrida programada
-# es lo que convierte a coins_market en una serie de tiempo: cada dia se
-# agrega un nuevo snapshot, y la limpieza (EA2) corre sobre TODO el
-# historial acumulado hasta ese momento.
+# Se ejecuta al hacer push a main, manualmente desde la pestaña Actions,
+# y automáticamente todos los días a las 09:00 UTC.
 on:
   push:
     branches: [main]
@@ -13,7 +10,7 @@ on:
     - cron: "0 9 * * *"
 
 permissions:
-  contents: write   # necesario para que el job pueda commitear las evidencias
+  contents: write
 
 jobs:
   ingest_and_clean:
@@ -43,13 +40,13 @@ jobs:
           echo "Los 3 artefactos de ingesta se generaron correctamente."
 
       # ---------- EA2: Preprocesamiento y limpieza ----------
-      # Nota: cleaning.py NO vuelve a llamar al API; lee lo que ya quedo
-      # guardado en ingestion.db (que hace de "almacenamiento en la nube
-      # simulado"), tal como pide el enunciado de EA2.
+      # Nota: cleaning.py no vuelve a llamar al API; lee lo que quedó
+      # guardado en ingestion.db, que funciona como almacenamiento
+      # en la nube simulado, tal como pide el enunciado de EA2.
       - name: Ejecutar la limpieza de datos (EA2)
         run: python src/cleaning.py
-       
 
+      # ---------- EA3: Enriquecimiento ----------
       - name: Ejecutar enriquecimiento de datos (EA3)
         run: python src/enrichement.py
 
@@ -62,9 +59,7 @@ jobs:
       - name: Mostrar el reporte de auditoría del enriquecimiento en el log
         run: cat src/static/auditoria/enriched_report.txt
 
-      - name: Verificar artefactos de limpieza (EA2)
-
-
+      # ---------- Verificar artefactos de limpieza ----------
       - name: Verificar artefactos de limpieza (EA2)
         run: |
           test -f src/xlsx/cleaned_data.xlsx
@@ -73,9 +68,7 @@ jobs:
           echo "--- cleaning_report.txt ---"
           cat src/static/auditoria/cleaning_report.txt
 
-      # Deja evidencia por dos vias:
-
-      # (a) como artefacto descargable del propio workflow run
+      # ---------- Subir evidencias como artefactos ----------
       - name: Subir artefactos del workflow
         uses: actions/upload-artifact@v4
         with:
@@ -84,14 +77,15 @@ jobs:
             src/db/ingestion.db
             src/xlsx/ingestion.xlsx
             src/xlsx/cleaned_data.xlsx
+            src/xlsx/enriched_data.xlsx
             src/static/auditoria/ingestion.txt
             src/static/auditoria/cleaning_report.txt
+            src/static/auditoria/enriched_report.txt
 
-      # (b) commiteados de vuelta al repo, para que sean visibles sin tener
-      # que entrar a la pestana Actions a descargar nada. El mensaje incluye
-      # [skip ci] para que este commit no dispare de nuevo el workflow.
+      # ---------- Commitear evidencias actualizadas ----------
+      # El [skip ci] evita que este commit vuelva a ejecutar el workflow.
       - name: Commitear evidencias actualizadas al repositorio
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Actualiza evidencias de ingesta y limpieza (run ${{ github.run_id }}) [skip ci]"
-          file_pattern: "src/db/ingestion.db src/xlsx/ingestion.xlsx src/xlsx/cleaned_data.xlsx src/static/auditoria/ingestion.txt src/static/auditoria/cleaning_report.txt"
+          commit_message: "Actualiza evidencias de ingesta, limpieza y enriquecimiento (run ${{ github.run_id }}) [skip ci]"
+          file_pattern: "src/db/ingestion.db src/xlsx/ingestion.xlsx src/xlsx/cleaned_data.xlsx src/xlsx/enriched_data.xlsx src/static/auditoria/ingestion.txt src/static/auditoria/cleaning_report.txt src/static/auditoria/enriched_report.txt"
