@@ -37,6 +37,8 @@ Ingesta_Api/
 ├── .github/
 │   └── workflows/
 │       └── bigdata.yml
+├── docs/
+│   └── arquitectura_modelo.pdf
 └── src/
     ├── ingestion.py
     ├── cleaning.py
@@ -281,6 +283,34 @@ Esto permite realizar la trazabilidad del proceso de enriquecimiento.
 
 ---
 
+# EA4 — Documentación de la Arquitectura y Modelo de Datos
+
+## Descripción de la solución
+
+La cuarta etapa corresponde a la **documentación completa de la arquitectura** del proyecto integrador, cubriendo de forma integrada las tres etapas anteriores (EA1, EA2 y EA3).
+
+El documento se encuentra en:
+
+```text
+docs/arquitectura_modelo.pdf
+```
+
+## Contenido del documento
+
+* Visión global de la arquitectura y sus componentes principales (base de datos analítica, scripts de procesamiento, mecanismo de automatización).
+* Diagramas de flujo: extracción del API → almacenamiento en SQLite → preprocesamiento → enriquecimiento → publicación de evidencias.
+* Modelo de datos resultante: esquema de las tablas `ingestion_runs` y `coins_market`, tipos de dato, llaves primarias y foránea, y diagrama entidad-relación.
+* Justificación de las herramientas utilizadas (SQLite, Pandas, GitHub Actions) y de por qué PySpark no fue necesario en la escala actual del proyecto.
+* Explicación de cómo se simula el entorno de nube combinando la base de datos SQLite versionada con la orquestación de GitHub Actions.
+* Flujo de datos y automatización de extremo a extremo.
+* Conclusiones, limitaciones y recomendaciones para un entorno de nube real.
+
+## Ruta metodológica
+
+El documento se elaboró revisando directamente las implementaciones de EA1, EA2 y EA3 (`src/ingestion.py`, `src/cleaning.py`, `src/enrichement.py`), el esquema real de `ingestion.db` y los reportes de auditoría generados por el workflow, de modo que cada dato citado (tablas, columnas, cifras del histórico) corresponde al estado real del repositorio al momento de redactarlo.
+
+---
+
 # Automatización completa con GitHub Actions
 
 El workflow:
@@ -289,7 +319,7 @@ El workflow:
 .github/workflows/bigdata.yml
 ```
 
-automatiza las tres etapas del proyecto.
+automatiza las tres etapas de procesamiento del proyecto (EA1, EA2 y EA3). La documentación de EA4 es un entregable estático que no forma parte de la ejecución automatizada.
 
 ## EA1 — Ingesta
 
@@ -383,5 +413,4 @@ Esto permite comprobar que:
 * Python 3.11
 * Pandas
 * SQLite
-* OpenPyX
-
+* OpenPyXL
