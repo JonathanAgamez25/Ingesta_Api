@@ -1,7 +1,7 @@
 AUDITORÍA DE INGESTA — EA1 Proyecto integrador
 ============================================================
-run_id:              20261028T153338Z-4a5dc7
-ejecutado:           2026-10-28T15:33:39.023239+00:00
+run_id:              20261029T154130Z-582e69
+ejecutado:           2026-10-29T15:41:30.973141+00:00
 fuente:              https://api.coingecko.com/api/v3/coins/markets
 
 CONTEO DE REGISTROS
