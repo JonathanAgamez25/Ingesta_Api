@@ -1,16 +1,16 @@
 ======================================================================
 REPORTE DE AUDITORÍA — LIMPIEZA Y PREPROCESAMIENTO DE DATOS
-Generado: 2026-11-01T15:31:29.708074+00:00
+Generado: 2026-11-02T18:55:26.643528+00:00
 ======================================================================
 
 --- 1) ESTADO ANTES DE LA LIMPIEZA ---
-Filas totales:               7100
-Corridas (run_id) distintas: 71
+Filas totales:               7200
+Corridas (run_id) distintas: 72
 Duplicados exactos:          0
 Duplicados por (run_id, coin_id): 0
 Nulos por columna (antes):
-  - price_change_24h: 19
-  - price_change_percentage_24h: 19
+  - price_change_24h: 20
+  - price_change_percentage_24h: 20
 
 --- 2) OPERACIONES DE LIMPIEZA APLICADAS ---
 Duplicados eliminados:        0
@@ -19,19 +19,19 @@ Fechas inválidas tras conversión (quedaron como NaT): 0
 Nulos rellenados con 0.0 (justificación: representan una
 variación de precio a 24h; 'sin dato' se interpreta como
 'sin variación reportada' para activos muy nuevos/ilíquidos):
-  - price_change_24h: 19 valores
-  - price_change_percentage_24h: 19 valores
+  - price_change_24h: 20 valores
+  - price_change_percentage_24h: 20 valores
 
 --- 3) TRANSFORMACIONES ADICIONALES ---
   - is_price_change_outlier (bandera IQR, no elimina filas)
   - market_cap_normalized (escalado min-max por run_id)
-Outliers detectados en variación 24h (IQR, rango normal (-5.49, 5.26)): 974 filas marcadas (no eliminadas)
+Outliers detectados en variación 24h (IQR, rango normal (-5.53, 5.22)): 981 filas marcadas (no eliminadas)
 
 --- 4) ESTADO DESPUÉS DE LA LIMPIEZA ---
-Filas totales:  7100
+Filas totales:  7200
 Columnas totales: 19 (se agregaron 2: is_price_change_outlier, market_cap_normalized)
 Nulos por columna (después): ninguno
 
 --- 5) COMPARATIVA RESUMIDA ---
-Filas: 7100 -> 7100 (sin cambio)
+Filas: 7200 -> 7200 (sin cambio)
 Integridad de datos: CONFIRMADA
