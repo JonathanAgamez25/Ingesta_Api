@@ -1,6 +1,6 @@
 ============================================================
 EA3 — Enriquecimiento de datos (CoinGecko)
-Ejecutado: 2026-11-08T15:38:34.239024+00:00
+Ejecutado: 2026-11-09T19:16:50.953048+00:00
 ============================================================
 Dataset base cargado: 100 registros, 19 columnas.
 
@@ -13,12 +13,12 @@ Leyendo fuentes adicionales:
 [TXT] notas.txt leído: 50 registros (nota).
 
 Cruzando cada fuente contra el dataset base (join por 'id'):
-  → Cruce con categorias.json (JSON): 36/100 registros coincidentes (36.0%). Columnas agregadas: ['categoria', 'subcategoria']
-  → Cruce con consenso.xlsx (XLSX): 36/100 registros coincidentes (36.0%). Columnas agregadas: ['mecanismo_consenso', 'anio_lanzamiento']
-  → Cruce con sitios_web.csv (CSV): 36/100 registros coincidentes (36.0%). Columnas agregadas: ['sitio_web']
-  → Cruce con casos_uso.xml (XML): 36/100 registros coincidentes (36.0%). Columnas agregadas: ['caso_de_uso']
-  → Cruce con tipo_red.html (HTML): 36/100 registros coincidentes (36.0%). Columnas agregadas: ['tipo_red']
-  → Cruce con notas.txt (TXT): 36/100 registros coincidentes (36.0%). Columnas agregadas: ['nota']
+  → Cruce con categorias.json (JSON): 35/100 registros coincidentes (35.0%). Columnas agregadas: ['categoria', 'subcategoria']
+  → Cruce con consenso.xlsx (XLSX): 35/100 registros coincidentes (35.0%). Columnas agregadas: ['mecanismo_consenso', 'anio_lanzamiento']
+  → Cruce con sitios_web.csv (CSV): 35/100 registros coincidentes (35.0%). Columnas agregadas: ['sitio_web']
+  → Cruce con casos_uso.xml (XML): 35/100 registros coincidentes (35.0%). Columnas agregadas: ['caso_de_uso']
+  → Cruce con tipo_red.html (HTML): 35/100 registros coincidentes (35.0%). Columnas agregadas: ['tipo_red']
+  → Cruce con notas.txt (TXT): 35/100 registros coincidentes (35.0%). Columnas agregadas: ['nota']
 
 ============================================================
 RESUMEN DEL ENRIQUECIMIENTO
